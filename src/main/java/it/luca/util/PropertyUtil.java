@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class PropertyUtil {
 	
-	private Properties myProperties;
+	private static Properties myProperties;
 	
     public PropertyUtil() {
 
@@ -26,7 +26,7 @@ public class PropertyUtil {
 
     }
 
-    public String getPropertyValue(String key) {
+    public static String getPropertyValue(String key) {
         return myProperties.getProperty(key);
     }
 }
