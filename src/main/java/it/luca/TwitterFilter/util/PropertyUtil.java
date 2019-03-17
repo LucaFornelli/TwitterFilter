@@ -1,4 +1,4 @@
-package it.luca.util;
+package it.luca.TwitterFilter.util;
 
 import java.io.File;
 import java.io.FileInputStream;
