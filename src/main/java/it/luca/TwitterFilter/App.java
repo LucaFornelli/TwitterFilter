@@ -11,6 +11,7 @@ public class App
     {
     	Twitter4JSearchTweets st = new Twitter4JSearchTweets();
     	st.SearchUsers("twitter4j");
+    	System.out.println("hello world");
     }
     
 }
