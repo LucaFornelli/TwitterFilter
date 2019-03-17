@@ -9,7 +9,7 @@ public class PropertyUtil {
 	
 	private static Properties myProperties;
 	
-    public PropertyUtil() {
+    static {
 
         File file = new File("./src/main/resources/config.properties");
         try {
