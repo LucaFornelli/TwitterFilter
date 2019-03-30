@@ -1,23 +1,21 @@
 package it.luca.TwitterFilter.util;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
 public class PropertyUtil {
 	
-	private static Properties myProperties;
+	private static Properties properties = new Properties();
 	
     static {
-
-        File file = new File("./src/main/resources/config.properties");
+    	
         try {
-
-            myProperties = new Properties();
-            FileInputStream myPropertiesInputStream = new FileInputStream(file);
-            myProperties.load(myPropertiesInputStream);
-
+            
+            final Properties configProperties = new Properties();
+            configProperties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties"));
+            
+            properties.putAll(configProperties);
+            
         } catch (IOException e) {
 
             e.printStackTrace();
@@ -27,6 +25,6 @@ public class PropertyUtil {
     }
 
     public static String getPropertyValue(String key) {
-        return myProperties.getProperty(key);
+        return properties.getProperty(key);
     }
 }
