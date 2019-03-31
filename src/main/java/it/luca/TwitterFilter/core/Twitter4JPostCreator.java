@@ -4,24 +4,44 @@ import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 
-public class Twitter4JPostCreator {
+/**
+ *This class allows users to create tweets on their personal profile
+ * @author lucafornelli
+ */
+
+public class Twitter4JPostCreator 
+{
 
 	private Twitter twitter;
 	
-	public Twitter4JPostCreator () {
+	/**
+	 * Twitter4JPostCreator constructor
+	 */
+	public Twitter4JPostCreator () 
+	{
 		twitter = Twitter4JInstanceCreator.getTwitter();
 	}
-	
-	public void createPost(String message) {
+
+	/**
+	 * This methods create a Tweet with the message specified as parameter
+	 * @param message: Text to insert in the Tweet
+	 * @return Status class, containing information about the Tweet
+	 */
+	public Status CreatePost(String message) 
+	{
         Status status;
-		try {
+		try 
+		{
 			status = twitter.updateStatus("Second Message");
 	        System.out.println("Creator: " + status.getUser().getName());
 	        System.out.println("Post: " + status.getText());
-		} catch (TwitterException e) {
-			// TODO Auto-generated catch block
+			return status;
+		} 
+		catch (TwitterException e) 
+		{
 			e.printStackTrace();
 		}
+		return null;
 	}
 
 }

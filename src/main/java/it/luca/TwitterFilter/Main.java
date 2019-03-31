@@ -4,7 +4,8 @@ import it.luca.TwitterFilter.core.Twitter4JStreamer;
 import it.luca.TwitterFilter.util.PropertyUtil;
 
 /**
- *
+ *This is the main class of the application.
+ *In this method will be implemented the behavior of the application
  */
 public class Main {
 	public static void main(String[] args) {
